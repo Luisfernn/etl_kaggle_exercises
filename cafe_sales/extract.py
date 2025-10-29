@@ -5,7 +5,7 @@ def extract_data(file_path: Path = None):
 
     if file_path is None:
         base_dir = Path(__file__).resolve().parent
-        file_path = / "data" / "input" / "dirty_cafe_sales.csv"
+        file_path = base_dir / "data" / "input" / "dirty_cafe_sales.csv"
 
      df = pd.read_csv(file_path)     
 
