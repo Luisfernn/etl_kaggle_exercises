@@ -9,7 +9,7 @@ def extract_data(file_path: Path = None):
 
     df = pd.read_csv(file_path)     
 
-    print(f"\n✅ Arquivo carregado com sucesso: {file_path}")
+    print(f"\n✅ Arquivo carregado com sucesso: {file_path.name}")
     print(f"📊 Linhas: {len(df)}, Colunas: {len(df.columns)}\n")
 
     print("Prévia dos dados (10 primeiras linhas):")
