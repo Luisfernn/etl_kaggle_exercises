@@ -4,7 +4,7 @@ import pandas as pd
 import logging
 
 logger = logging.getLogger(__name__)
-logger.propagate = False  # impede o logger de enviar mensagens ao root
+logger.propagate = False 
 logger.addHandler(logging.NullHandler())
 
 def extract_data(file_path: Path = None):
