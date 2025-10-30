@@ -1,6 +1,12 @@
 from pathlib import Path
 import pandas as pd
 
+import logging
+
+logger = logging.getLogger(__name__)
+logger.propagate = False  # impede o logger de enviar mensagens ao root
+logger.addHandler(logging.NullHandler())
+
 def extract_data(file_path: Path = None):
 
     if file_path is None:
@@ -9,14 +15,14 @@ def extract_data(file_path: Path = None):
 
     df = pd.read_csv(file_path)     
 
-    print(f"\n✅ Arquivo carregado com sucesso: {file_path.name}")
-    print(f"📊 Linhas: {len(df)}, Colunas: {len(df.columns)}\n")
+    logging.info(f"\n✅ Arquivo carregado com sucesso: {file_path.name}")
+    logging.info(f"📊 Linhas: {len(df)}, Colunas: {len(df.columns)}\n")
 
-    print("Prévia dos dados (10 primeiras linhas):")
-    print(df.head(10), "\n")
+    logging.info("Prévia dos dados (10 primeiras linhas):")
+    logging.info(f"{df.head(10)}\n")
 
-    print("Prévia das últimas 10 linhas:")
-    print(df.tail(10), "\n")
+    logging.info("Prévia das últimas 10 linhas:")
+    logging.info(f"{df.tail(10)}\n")
 
     return df
 
