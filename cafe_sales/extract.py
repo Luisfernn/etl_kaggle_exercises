@@ -15,14 +15,14 @@ def extract_data(file_path: Path = None):
 
     df = pd.read_csv(file_path)     
 
-    logging.info(f"\n✅ Arquivo carregado com sucesso: {file_path.name}")
-    logging.info(f"📊 Linhas: {len(df)}, Colunas: {len(df.columns)}\n")
+    logger.info(f"\n✅ Arquivo carregado com sucesso: {file_path.name}")
+    logger.info(f"📊 Linhas: {len(df)}, Colunas: {len(df.columns)}\n")
 
-    logging.info("Prévia dos dados (10 primeiras linhas):")
-    logging.info(f"{df.head(10)}\n")
+    logger.info("Prévia dos dados (10 primeiras linhas):")
+    logger.info(f"{df.head(10)}\n")
 
-    logging.info("Prévia das últimas 10 linhas:")
-    logging.info(f"{df.tail(10)}\n")
+    logger.info("Prévia das últimas 10 linhas:")
+    logger.info(f"{df.tail(10)}\n")
 
     return df
 
