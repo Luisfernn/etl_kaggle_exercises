@@ -4,8 +4,6 @@ import pandas as pd
 import logging
 
 logger = logging.getLogger(__name__)
-logger.propagate = False 
-logger.addHandler(logging.NullHandler())
 
 def extract_data(file_path: Path = None):
 
