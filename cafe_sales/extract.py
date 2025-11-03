@@ -27,5 +27,5 @@ def extract_data(file_path: Path = None):
     return df
 
 if __name__ == "__main__":
-    logging.basicConfig(level=loggin.INFO)
+    logging.basicConfig(level=logging.INFO)
     extract_data()
