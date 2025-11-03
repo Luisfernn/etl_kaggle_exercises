@@ -27,4 +27,5 @@ def extract_data(file_path: Path = None):
     return df
 
 if __name__ == "__main__":
+    loggin.basicConfig(level=loggin.INFO)
     extract_data()
