@@ -27,5 +27,6 @@ def extract_data(file_path: Path = None):
     return df
 
 if __name__ == "__main__":
+    logger.handlers.clear()
     logging.basicConfig(level=logging.INFO)
     extract_data()
