@@ -25,6 +25,14 @@ def extract_data(file_path: Path = None):
     return df
 
 if __name__ == "__main__":
-    logger.handlers.clear()
-    logging.basicConfig(level=logging.INFO)
+    
+    handler = logging.StreamHandler()
+    handler.setLevel(logging.INFO)
+
+    formatter = logging.Formatter("%(message)s")
+    handler.setFormatter(formatter)
+
+    logger.addHandler(handler)
+    logger.setLevel(logging.INFO)
+
     extract_data()
