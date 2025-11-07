@@ -30,4 +30,4 @@ def validate_transactions(df: pd.DataFrame) -> pd.DataFrame:
 
     logger.info(f"✅ Transações mantidas: {kept_count}") 
 
-    return df[~~invalid_mask].copy()
+    return df[~invalid_mask].copy()
