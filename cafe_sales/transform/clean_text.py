@@ -34,7 +34,6 @@ def clean_text(df: pd.DataFrame) -> pd.DataFrame:
 
 
 if __name__ == "__main__":
-    # Apenas para teste rápido, usando arquivo do extract
     base_dir = Path(__file__).resolve().parent
     file_path = base_dir / "data" / "input" / "dirty_cafe_sales.csv"
 
