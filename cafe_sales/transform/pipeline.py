@@ -22,7 +22,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-def run-pipeline():
+def run_pipeline():
     try:
         logger.info("🚀 Iniciando pipeline ETL...")
 
@@ -37,7 +37,7 @@ def run-pipeline():
 
         is_valid = validate_data(df)
         if not is_valid:
-            logger.waring("⚠️ Dados inválidos detectados. Salvamento cancelado.")
+            logger.warning("⚠️ Dados inválidos detectados. Salvamento cancelado.")
             return
 
 
@@ -46,8 +46,8 @@ def run-pipeline():
         logger.info(f"✅ Dados salvos com sucesso em: {output_file}")
 
 
-    except Exeption as e:
-        logger.exeption(f"❌ Erro inesperado na execução do pipeline {e}")  
+    except Exception as e:
+        logger.exception(f"❌ Erro inesperado na execução do pipeline {e}")  
 
-if __name__ == "__main__:
+if __name__ == "__main__":
     run_pipeline()
