@@ -17,8 +17,6 @@ def clean_numeric(df: pd.DataFrame) -> pd.DataFrame:
         df.loc[can_fill, "total_spent"] / df.loc[can_fill, "quantity"]
     )
 
-    logger.info(f"💰 Valores de 'price_per_unit' preenchidos automaticamente: {can_fill.sum()}")
-
     df["expected_total"] = df["price_per_unit"] * df["quantity"]
 
     df["diff"] = df["total_spent"] - df["expected_total"]
