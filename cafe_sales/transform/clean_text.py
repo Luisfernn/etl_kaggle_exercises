@@ -39,4 +39,4 @@ if __name__ == "__main__":
 
     df = pd.read_csv(file_path)
     df_clean = clean_text(df)
-    print(df_clean.head(10))    
+    print(df_clean.head(10))
