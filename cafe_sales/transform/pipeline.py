@@ -41,12 +41,6 @@ def run_pipeline():
             logger.warning("⚠️ Dados inválidos detectados. Salvamento cancelado.")
             return
 
-
-        output_file = OUTPUT_DIR / "clean_sales.csv"
-        df.to_csv(output_file, index=False)
-        logger.info(f"✅ Dados salvos com sucesso em: {output_file}")
-
-
     except Exception as e:
         logger.exception(f"❌ Erro inesperado na execução do pipeline {e}")  
 
