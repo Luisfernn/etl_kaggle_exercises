@@ -1,4 +1,16 @@
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - [%(levelname)s] - %(message)s",
+    datefmt="%H:%M:%S"
+)
+
+logger = logging.getLogger(__name__)
+
 def validate_data(df: pd.DataFrame) -> pd.DataFrame:
+
+    logger.info("🔍 Iniciando validação de integridade dos dados...")
 
     expected_cols = ["expected_total", "diff", "suspect_transictions"]
     for col in expected_cols:
