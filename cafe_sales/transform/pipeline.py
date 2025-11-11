@@ -4,6 +4,7 @@ import pandas as pd
 
 from cafe_sales.extract import  extract_data
 from cafe_sales.clean_text import clean_text
+from cafe_sales.clean_numeric import clean_numeric
 from cafe_sales.validate import validate_data
 
 BASE_DIR = Path(__file__).resolve().parent
