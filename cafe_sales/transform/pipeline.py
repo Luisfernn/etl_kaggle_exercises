@@ -1,6 +1,5 @@
 import logging 
 from pathlib import Path
-import pandas as pd
 
 from cafe_sales.extract import  extract_data
 from cafe_sales.clean_text import clean_text
