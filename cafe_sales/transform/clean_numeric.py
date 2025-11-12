@@ -2,7 +2,7 @@ import pandas as pd
 import logging
 
 logger = logging.getLogger(__name__)
-logger.addHandler(logging;NullHandler())
+logger.addHandler(logging.NullHandler())
 
 
 def clean_numeric(df: pd.DataFrame) -> pd.DataFrame:
@@ -21,9 +21,9 @@ def clean_numeric(df: pd.DataFrame) -> pd.DataFrame:
 
     df["diff"] = df["total_spent"] - df["expected_total"]
 
-    df["suspect_transaction"] = df["diff"]abs() > 0.01
+    df["suspect_transaction"] = df["diff"].abs() > 0.01
 
-    logger.info(f"⚠️ Transações suspeitas detectadas: {df['suspect_transactions'].sum()}")
+    logger.info(f"⚠️ Transações suspeitas detectadas: {df['suspect_transaction'].sum()}")
 
 
     return df
