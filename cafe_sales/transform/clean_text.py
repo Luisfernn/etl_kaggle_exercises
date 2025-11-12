@@ -11,7 +11,7 @@ def clean_text(df: pd.DataFrame) -> pd.DataFrame:
 
     df = df.copy()
 
-    text_columns = ['Item', 'Payment Method', 'Locaion']
+    text_columns = ['Item', 'Payment Method', 'Location']
 
     for col in text_columns:
 
