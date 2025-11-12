@@ -26,7 +26,7 @@ def run_pipeline():
     try:
         logger.info("🚀 Iniciando pipeline ETL...")
 
-        df = extract_data(DATA_DIR / "dirty_cafe_sales.csv")
+        df = extract_data(DATA_DIR / "input" / "dirty_cafe_sales.csv")
         logger.info(f"📦 Dados extraídos: {len(df)} linhas.")
 
         df = clean_text(df)
