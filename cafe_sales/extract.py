@@ -11,7 +11,15 @@ def extract_data(file_path: Path = None):
         base_dir = Path(__file__).resolve().parent
         file_path = base_dir / "data" / "input" / "dirty_cafe_sales.csv"
 
-    df = pd.read_csv(file_path)     
+    if not file_path.exists():
+        logger.error(f"❌ Arquivo não encontrado: {file_path}")
+        return None
+
+    try:
+        df = pd.read_csv(file_path)
+    except Exception as e:
+        logger.error(f"⚠️ Erro ao ler o arquivo: {e}")
+        return None
 
     logger.info(f"\n✅ Arquivo carregado com sucesso: {file_path.name}")
     logger.info(f"📊 Linhas: {len(df)}, Colunas: {len(df.columns)}\n")
