@@ -15,7 +15,7 @@ def validate_data(df: pd.DataFrame) -> pd.DataFrame:
 
     numeric_cols = ["total_spent", "price_per_unit" "quantity"] 
     for col in numeric_cols:
-        if df[col].isna().any:
+        if df[col].isna().any():
             logger.waring(f"⚠️ Valores ausentes em {col}")
 
     inconsistents = (df["expected_total"] - (df["price_per_unit"] * df["quantity"])).abs() > 0.01
