@@ -8,6 +8,10 @@ logger.addHandler(logging.NullHandler())
 def load_data(df: pd.DataFrame, output_dir: Path, filename: str = "clean_sales.csv"):
     output_dir.mkdir(exist_ok=True)
 
-    output_file = output_dir / filename
-    df.to_csv(output_file, index=False)
-    logger.info(f"✅ Dados salvos com sucesso em: {output_file}")
+    try:
+        output_dir.mkdir(parents=True, exist_ok=True)
+        output_file = output_dir / filename
+        df.to_csv(output_file, index=False)
+        logger.info(f"✅ Dados salvos com sucesso em: {output_file}")
+    except Exception as e:
+        logger.exception(f"❌ Erro ao salvar o arquivo: {e}")    
