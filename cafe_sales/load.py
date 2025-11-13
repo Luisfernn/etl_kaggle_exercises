@@ -6,7 +6,6 @@ logger = logging.getLogger(__name__)
 logger.addHandler(logging.NullHandler())
 
 def load_data(df: pd.DataFrame, output_dir: Path, filename: str = "clean_sales.csv"):
-    output_dir.mkdir(exist_ok=True)
 
     try:
         output_dir.mkdir(parents=True, exist_ok=True)
