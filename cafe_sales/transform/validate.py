@@ -4,7 +4,7 @@ import logging
 logging.basicConfig(level=logging.INFO, format="%(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
 
-def validate_data(df: pd.DataFrame) -> pd.DataFrame:
+def validate_data(df: pd.DataFrame) -> bool:
 
     logger.info("🔍 Iniciando validação de integridade dos dados...")
 
