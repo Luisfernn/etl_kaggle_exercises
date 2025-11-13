@@ -11,7 +11,7 @@ def load_data(df: pd.DataFrame, output_dir: Path, filename: str = "clean_sales.c
     try:
         output_dir.mkdir(parents=True, exist_ok=True)
         output_file = output_dir / filename
-        df.to_csv(output_file, index=False)
+        df.to_csv(output_file, index=False, encoding="utf-8")
         logger.info(f"✅ Dados salvos com sucesso em: {output_file}")
     except Exception as e:
         logger.exception(f"❌ Erro ao salvar o arquivo: {e}")    
