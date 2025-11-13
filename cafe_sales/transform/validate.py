@@ -10,7 +10,7 @@ def validate_data(df: pd.DataFrame) -> pd.DataFrame:
 
     expected_cols = ["expected_total", "diff", "suspect_transictions"]
     for col in expected_cols:
-        if col not in df.colmuns:
+        if col not in df.columns:
             logger.waring(f"⚠️ Coluna ausente: {col}")
 
     numeric_cols = ["total_spent", "price_per_unit," "quantity"] 
