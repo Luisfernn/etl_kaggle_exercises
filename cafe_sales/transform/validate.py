@@ -8,12 +8,12 @@ def validate_data(df: pd.DataFrame) -> pd.DataFrame:
 
     logger.info("🔍 Iniciando validação de integridade dos dados...")
 
-    expected_cols = ["expected_total", "diff", "suspect_transictions"]
+    expected_cols = ["expected_total", "diff", "suspect_transiction"]
     for col in expected_cols:
         if col not in df.columns:
             logger.warning(f"⚠️ Coluna ausente: {col}")
 
-    numeric_cols = ["total_spent", "price_per_unit," "quantity"] 
+    numeric_cols = ["total_spent", "price_per_unit" "quantity"] 
     for col in numeric_cols:
         if df[col].isna().any:
             logger.waring(f"⚠️ Valores ausentes em {col}")
