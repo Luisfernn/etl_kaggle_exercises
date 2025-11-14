@@ -7,3 +7,6 @@ OUTPUT_DIR = BASE_DIR / "data" / "output"
 
 if __name__ == "__main__":
     df = run_pipeline()
+
+    if df is not None:
+        load_data(df, OUTPUT_DIR)
