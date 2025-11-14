@@ -40,6 +40,8 @@ def run_pipeline():
             logger.warning("⚠️ Dados inválidos detectados. Salvamento cancelado.")
             return
 
+        return df    
+
     except Exception as e:
         logger.exception(f"❌ Erro inesperado na execução do pipeline {e}")  
 
