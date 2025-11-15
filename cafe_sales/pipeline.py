@@ -11,14 +11,6 @@ DATA_DIR = BASE_DIR / "data"
 OUTPUT_DIR = BASE_DIR / "output"
 OUTPUT_DIR.mkdir(exist_ok=True)
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s | %(levelname)s | %(message)s",
-    handlers=[
-        logging.FileHandler(OUTPUT_DIR / "etl.log", mode="a", encoding="utf-8"),
-        logging.StreamHandler()
-    ]
-)
 logger = logging.getLogger(__name__)
 logger.addHandler(logging.NullHandler())
 
