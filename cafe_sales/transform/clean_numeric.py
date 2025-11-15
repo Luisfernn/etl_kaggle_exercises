@@ -25,5 +25,4 @@ def clean_numeric(df: pd.DataFrame) -> pd.DataFrame:
 
     logger.info(f"⚠️ Transações suspeitas detectadas: {df['suspect_transaction'].sum()}")
 
-
     return df
