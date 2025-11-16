@@ -9,6 +9,14 @@ def clean_numeric(df: pd.DataFrame) -> pd.DataFrame:
 
     df = df.copy()
 
+    df.columns = (
+        df.columns.str.strip()
+                  .str.lower()
+                  .str.replace(r"[^a-z0-9]+", "_", regex=True)
+                  .str.replace(r"_+", "_", regex=True)
+                  .str.strip("_")
+    )
+
     missing_price_mask = df["price_per_unit"].isna()
     fillable_mask = df["total_spent"].notna() & df["quantity"].notna()
     can_fill = missing_price_mask & fillable_mask
