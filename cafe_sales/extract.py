@@ -5,6 +5,7 @@ import logging
 
 logger = logging.getLogger(__name__)
 logger.addHandler(logging.NullHandler())
+logger.propagate = False  
 
 def extract_data(file_path: Path = None):
 
