@@ -18,7 +18,7 @@ def extract_data(file_path: Path = None):
         return None
 
     try:
-        df = pd.read_csv(file_path)
+        df = pd.read_csv(file_path, sep=",", engine="python", on_bad_lines="warn")
     except Exception as e:
         logger.error(f"⚠️ Erro ao ler o arquivo: {e}")
         return None
