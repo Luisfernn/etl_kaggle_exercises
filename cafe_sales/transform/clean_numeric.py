@@ -9,6 +9,10 @@ def clean_numeric(df: pd.DataFrame) -> pd.DataFrame:
 
     df = df.copy()
 
+    df["price_per_unit"] = pd.to_numeric(df["price_per_unit"], errors="coerce")
+    df["total_spent"] = pd.to_numeric(df["total_spent"], errors="coerce")
+    df["quantity"] = pd.to_numeric(df["quantity"], errors="coerce")
+
     missing_price_mask = df["price_per_unit"].isna()
     fillable_mask = df["total_spent"].notna() & df["quantity"].notna()
     can_fill = missing_price_mask & fillable_mask
