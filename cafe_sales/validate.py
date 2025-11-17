@@ -14,7 +14,7 @@ def validate_data(df: pd.DataFrame) -> bool:
     for col in expected_cols:
         if col not in df.columns:
             logger.warning(f"⚠️ Coluna ausente: {col}")
-
+            missing_columns.append(col)
         elif df[col].isna().any():
             logger.warning(f"⚠️ Valores ausentes em: {col}")
             missing_columns.append(col)
