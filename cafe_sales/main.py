@@ -6,6 +6,9 @@ from cafe_sales.load import load_data
 BASE_DIR = Path(__file__).resolve().parent
 OUTPUT_DIR = BASE_DIR / "data" / "output"
 
+LOG_DIR = BASE_DIR / "data" / "logs"
+LOG_DIR.mkdir(parents=True, exist_ok=True)
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s | %(levelname)s | %(message)s",
