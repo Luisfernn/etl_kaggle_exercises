@@ -24,11 +24,11 @@ def extract_data(file_path: Path = None):
         return None
 
     df.columns = (
-    df.columns.str.strip()
-              .str.lower()
-              .str.replace(r"[^a-z0-9]+", "_", regex=True)
-              .str.replace(r"_+", "_", regex=True)
-              .str.strip("_")
+            df.columns.str.strip()
+                      .str.lower()
+                      .str.replace(r"[^a-z0-9]+", "_", regex=True)
+                      .str.replace(r"_+", "_", regex=True)
+                      .str.strip("_")
 )    
 
     logger.info(f"\n✅ Arquivo carregado com sucesso: {file_path.name}")
