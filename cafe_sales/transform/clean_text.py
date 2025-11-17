@@ -11,20 +11,20 @@ def clean_text(df: pd.DataFrame) -> pd.DataFrame:
 
     df = df.copy()
 
-    text_columns = ['Item', 'Payment Method', 'Location']
+    text_columns = ['item', 'payment_method', 'location']
 
     for col in text_columns:
 
         df[col] = df[col].where(df[col].isna(), df[col].str.lower())
 
-    df['Item'] = df['Item'].replace('unknown', pd.NA)
-    df['Item'] = df['Item'].fillna('unknown_item')
+    df['item'] = df['item'].replace('unknown', pd.NA)
+    df['item'] = df['item'].fillna('unknown_item')
 
-    df['Payment Method'] = df['Payment Method'].replace(['unknown', 'error'], pd.NA)
-    df['Payment Method'] = df['Payment Method'].fillna('unknown_payment')
+    df['payment_method'] = df['payment_method'].replace(['unknown', 'error'], pd.NA)
+    df['payment_method'] = df['payment_method'].fillna('unknown_payment')
 
-    df['Location'] = df['Location'].replace('unknown', pd.NA)
-    df['Location'] = df['Location'].fillna('unknown_location')
+    df['location'] = df['location'].replace('unknown', pd.NA)
+    df['location'] = df['location'].fillna('unknown_location')
 
     logger.info("✅ Transformações de texto aplicadas:")
     for col in text_columns:
