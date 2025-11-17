@@ -13,13 +13,13 @@ def validate_data(df: pd.DataFrame) -> bool:
         if col not in df.columns:
             logger.warning(f"⚠️ Coluna ausente: {col}")
 
-    for col in numeric_cols:
-        if df[col].isna().any():
-            logger.warning(f"⚠️ Valores ausentes em {col}")
+        elif df[col],isna().any():
+            logger.warning(f"⚠️ Valores ausentes em: {col}")
+            missing_columns.append(col)
 
-    inconsistents = (df["expected_total"] - (df["price_per_unit"] * df["quantity"])).abs() > 0.01
-    if inconsistents.any():
-        logger.warning(f"⚠️ {inconsistents.sum()} inconsistências detectadas entre o esperado e o calculado.")
-
-    logger.info("✅ Validação concluída com sucesso.")    
-    return df
+    if len(missing_columns) == 0:
+        logger.info("✅ Validação concluída com sucesso.")
+        return True
+    else:
+        logger.warning("⚠️ Validação encontrou problemas.")
+        return False
