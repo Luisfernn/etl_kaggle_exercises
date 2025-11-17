@@ -8,7 +8,7 @@ def validate_data(df: pd.DataFrame) -> bool:
 
     logger.info("🔍 Iniciando validação de integridade dos dados...")
 
-    expected_cols = ["expected_total", "diff", "suspect_transiction"]
+    expected_cols = ["expected_total", "diff", "suspect_transaction"]
     for col in expected_cols:
         if col not in df.columns:
             logger.warning(f"⚠️ Coluna ausente: {col}")
