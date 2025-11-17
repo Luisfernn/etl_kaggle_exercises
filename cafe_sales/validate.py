@@ -13,7 +13,15 @@ def validate_data(df: pd.DataFrame) -> bool:
         if col not in df.columns:
             logger.warning(f"⚠️ Coluna ausente: {col}")
 
-    numeric_cols = ["total_spent", "price_per_unit" "quantity"] 
+    numeric_cols = [
+         "item",
+         "payment_method",
+         "location",
+         "quantity",
+         "price_per_unit",
+         "total_spent",
+         "suspect_transaction"
+    ] 
     for col in numeric_cols:
         if df[col].isna().any():
             logger.warning(f"⚠️ Valores ausentes em {col}")
