@@ -19,3 +19,7 @@ def validate_data(df: pd.DataFrame) -> bool:
     & df["quantity"].notna()
     & df["total_spent"].notna()
 )        
+ 
+    if df.loc[valid_rows, "expected_total"].isna().any():
+    logger.warning(...)
+    return False
