@@ -13,3 +13,9 @@ def validate_data(df: pd.DataFrame) -> bool:
         if col not in df.columns:
             logger.warning(f"⚠️ Coluna ausente: {col}")
             return False
+
+    valid_rows = (
+    df["price_per_unit"].notna()
+    & df["quantity"].notna()
+    & df["total_spent"].notna()
+)        
