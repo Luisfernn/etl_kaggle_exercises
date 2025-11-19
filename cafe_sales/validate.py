@@ -30,4 +30,7 @@ def validate_data(df: pd.DataFrame) -> bool:
 
     if df["suspect_transaction"].isna().any():
         logger.warning("⚠️ suspect_transaction contém NaN (não deveria).")
-        return False    
+        return False   
+
+    logger.info("✅ Dados validados com sucesso.")
+    return True     
