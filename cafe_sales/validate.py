@@ -27,3 +27,7 @@ def validate_data(df: pd.DataFrame) -> bool:
     if df.loc[valid_rows, "diff"].isna().any():
         logger.warning("⚠️ diff está NaN em linhas onde deveria existir.")
         return False
+
+    if df["suspect_transaction"].isna().any():
+        logger.warning("⚠️ suspect_transaction contém NaN (não deveria).")
+        return False    
