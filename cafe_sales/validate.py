@@ -21,5 +21,5 @@ def validate_data(df: pd.DataFrame) -> bool:
 )        
  
     if df.loc[valid_rows, "expected_total"].isna().any():
-    logger.warning(...)
+    logger.warning("⚠️ expected_total está NaN em linhas onde deveria existir.")
     return False
