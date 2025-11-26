@@ -35,6 +35,7 @@ def extract_data(file_path: Path = None):
 
     return df
 
+
 if __name__ == "__main__":
 
     handler = logging.StreamHandler()
