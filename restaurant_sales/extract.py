@@ -3,6 +3,9 @@ import pandas as pd
 
 import logging
 
+pd.set_option('display.max_columns', None)
+pd.set_option('display.max_colwidth', None)
+
 logger = logging.getLogger(__name__)
 logger.addHandler(logging.NullHandler())
 logger.propagate = False
