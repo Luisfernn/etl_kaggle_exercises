@@ -27,7 +27,9 @@ def extract_data(file_path: Path = None):
         return None
 
 
-    df.columns = df.columns.str.lower() 
+    df.columns = df.columns.str.lower()
+
+    col_not_transform = ["Order id", "costumer id"]
 
     logger.info(f"\n✅ Arquivo carregado com sucesso: {file_path.name}")
     logger.info(f"📊 Linhas: {len(df)}, Colunas: {len(df.columns)}\n")
