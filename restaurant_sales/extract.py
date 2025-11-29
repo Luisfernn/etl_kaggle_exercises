@@ -31,8 +31,9 @@ def extract_data(file_path: Path = None):
 
     col_not_transform = ["Order ID","Customer ID"]
 
-    for col not in col_not_transform:
-        df.columns = df.columns.str.lower
+    for col in df.columns:
+        if col not in col_not_transform:
+            df[col] = df[col].str.lowe()
 
     logger.info(f"\n✅ Arquivo carregado com sucesso: {file_path.name}")
     logger.info(f"📊 Linhas: {len(df)}, Colunas: {len(df.columns)}\n")
