@@ -33,7 +33,7 @@ def extract_data(file_path: Path = None):
 
     for col in df.columns:
         if col not in col_not_transform:
-            df[col] = df[col].str.lowe()
+            df[col] = df[col].str.lower()
 
     logger.info(f"\n✅ Arquivo carregado com sucesso: {file_path.name}")
     logger.info(f"📊 Linhas: {len(df)}, Colunas: {len(df.columns)}\n")
