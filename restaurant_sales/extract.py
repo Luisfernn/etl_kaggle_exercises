@@ -34,6 +34,8 @@ def extract_data(file_path: Path = None):
     for col in df.columns:
         if pd.api.types.is_numeric_dtype(df[col]):
             continue
+        if col in col_not_transform:
+            continue    
         else:
             df[col] = df[col].str.lower()
             
