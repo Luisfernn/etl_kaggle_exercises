@@ -4,6 +4,4 @@ import logging
 def text_transformation(df):
     df_valid = df["valid_line"] == True
 
-    for col in df:
-        if col == df_valid:
-            df["item"] = df["item"].fillna("unknown")
+    df.loc[df["valid_line"], "item"] = df["item"].fillna("unknown")
