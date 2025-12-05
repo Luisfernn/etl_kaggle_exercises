@@ -6,6 +6,6 @@ def text_transformation(df):
 
     df.loc[valid, "item"] = df.loc[valid, "item"].fillna("unknown")
 
-    df.loc[valid, "payment method"] = df.loc[valid, "payment method"].fillna("unknown")
+    df.loc[valid, "payment_method"] = df.loc[valid, "payment_method"].fillna("unknown")
 
     return df
