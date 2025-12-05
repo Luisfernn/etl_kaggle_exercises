@@ -29,7 +29,7 @@ def extract_data(file_path: Path = None):
 
     df.columns = df.columns.str.lower()
 
-    col_not_transform = ["order id","customer id"]
+    col_not_transform = ["order_id","customer_id"]
 
     for col in df.columns:
         if pd.api.types.is_numeric_dtype(df[col]):
