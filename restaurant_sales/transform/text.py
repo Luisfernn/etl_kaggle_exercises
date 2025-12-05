@@ -5,6 +5,5 @@ def text_transformation(df):
     valid = df["valid_line"] == True
 
     df.loc[valid, "item"] = df.loc[valid, "item"].fillna("unknown")
-    return df
 
     df.loc[valid, "payment method"] = df.loc[valid, "payment method"].fillna("unknown")
