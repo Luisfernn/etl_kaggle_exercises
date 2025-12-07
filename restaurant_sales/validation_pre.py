@@ -2,7 +2,7 @@ from extract import extract_data
 import pandas as pd
 import logging
 
-def validation_data(df: pd.DataFrame) -> pd.DataFrame:
+def validation_pre_data(df: pd.DataFrame) -> pd.DataFrame:
 
     required_columns = {"item", "quantity", "payment_method", "valid_line"}
     missing = required_columns - set(df.collumns)
