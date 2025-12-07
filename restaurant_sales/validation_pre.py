@@ -20,11 +20,13 @@ def validation_pre_data(df: pd.DataFrame) -> pd.DataFrame:
 
     df["valid_line"] = df["order_total"] > 0.01
 
+
     numeric_cols = ["price", "quantity"]
 
     for col in numeric_cols:
         invalid = pd.to_numeric(df[col], errors="coerce").isna().sum()
         logger.warning(f"❗ Valores inválidos em '{col}': {invalid}")
+
 
     nan_counts = df.isna().sum
 
