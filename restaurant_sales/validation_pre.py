@@ -10,6 +10,9 @@ def validation_data(df: pd.DataFrame) -> pd.DataFrame:
 
     assert not df.empty, "DataFrame is empty after extract"
 
+    if df.duplicated().any():
+    logging.warning("There's duplicate lines in df.")
+
     valid = df["valid_line"] == True
 
     df["valid_line"] = df["order_total"] > 0.01
