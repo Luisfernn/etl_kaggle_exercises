@@ -12,3 +12,8 @@ def load_data(df: pd.DataFrame, file_name: str = "restautant_sales_clean.csv", o
     output_dir.mkdir(parents=True, exist_ok=True)
 
     file_path = output_dir / file_name
+
+
+    if file_path.exists() and not overwrite:
+        logger.error(f"❌ Arquivo já existe e overwrite=False: {file_path}")
+        return None
