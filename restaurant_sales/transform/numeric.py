@@ -16,3 +16,4 @@ def numeric_transformation(df, valid):
 
     except Exception as etapa:
         logging.error(f"❌ Erro na etapa: {etapa}")
+        raise
