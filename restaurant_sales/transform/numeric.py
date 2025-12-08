@@ -12,7 +12,7 @@ def numeric_transformation(df, valid):
         etapa = "Preenchendo com 0 linhas validas vazias em price e transformando os dados da coluna em int"
         df.loc[valid, "quantity"] = df.loc[valid, "quantity"].fillna(0).astype(int)
 
-    return df
+        return df
 
     except Exception as etapa:
         logging.error(f"❌ Erro na etapa: {etapa}")
