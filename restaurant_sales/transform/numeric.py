@@ -13,3 +13,6 @@ def numeric_transformation(df, valid):
         df.loc[valid, "quantity"] = df.loc[valid, "quantity"].fillna(0).astype(int)
 
     return df
+
+    except Exception as etapa:
+        logging.error(f"❌ Erro na etapa: {etapa}")
