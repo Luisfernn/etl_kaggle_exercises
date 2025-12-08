@@ -7,3 +7,5 @@ from load import load_data
 
 import pandas as pd
 import logging
+
+def pipeline(df: pd.DataFrame) -> pd.DataFrame:
