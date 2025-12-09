@@ -11,7 +11,7 @@ def validation_post_data(df):
     assert df["item"].notna().all(), "item has NaN after text cleaning"
     assert df["payment_method"].notna().all(), "payment_method has NaN after text cleaning"
 
-    nan_counts = df.isna().sum
+    nan_counts = df.isna().sum()
 
     logger.info("Pós_validation: Contagem de NaN por colunas:")
     logger.info(f"\n{nan_counts}")
