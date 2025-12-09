@@ -19,4 +19,4 @@ def text_transformation(df, valid):
      return df, valid
 
     except Exception as e:
-        logger.error(f"Erro na etapa: {etapa}")
+        logger.error(f"❌ Erro na etapa: {etapa}")
