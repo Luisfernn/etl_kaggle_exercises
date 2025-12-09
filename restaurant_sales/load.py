@@ -8,7 +8,7 @@ logger.addHandler(logging.NullHandler())
 def load_data(df: pd.DataFrame, file_name: str = "restautant_sales_clean.csv", overwrite: bool = True):
 
      output_dir = Path(__file__).resolve().parent / "data" / "output"
-    output_dir.mkdir(parents=True, exist_ok=True)
+     output_dir.mkdir(parents=True, exist_ok=True)
 
     file_path = output_dir / file_name
 
