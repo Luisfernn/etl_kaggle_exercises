@@ -2,6 +2,9 @@ from extract import extract_data
 import pandas as pd
 import logging
 
+logger = logging.getLogger(__name__)
+logger.addHandler(logging.NullHandler())
+
 def validation_pre_data(df: pd.DataFrame) -> pd.DataFrame:
 
     required_columns = {"item", "quantity", "payment_method", "valid_line"}
