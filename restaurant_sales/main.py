@@ -26,9 +26,9 @@ if __name__ == "__main__":
         logger.info("🚀 Iniciando execução da pipeline...")
         df = run_pipeline()
         if df is not None:
-    logger.info("💾 Carregando dados no diretório de saída...")
-    load_data(df, file_name="restaurant_sales_clean.csv") 
-    logger.info("✅ Pipeline finalizada com sucesso!")
+            logger.info("💾 Carregando dados no diretório de saída...")
+            load_data(df, file_name="restaurant_sales_clean.csv") 
+            logger.info("✅ Pipeline finalizada com sucesso!")
         else:
             logger.warning("⚠️ A pipeline retornou None. Nenhum dado foi carregado.")
     except Exception as e:
