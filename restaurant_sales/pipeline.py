@@ -36,3 +36,7 @@ def pipeline(df: pd.DataFrame) -> pd.DataFrame:
         df = validation_post_data(df, valid)
 
         return df
+
+    except Exception as e:
+        logging.error(f"❌ Erro na execução da etapa: {e}")
+        raise
