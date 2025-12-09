@@ -45,11 +45,6 @@ def extract_data(file_path: Path = None):
     logger.info(f"\n✅ Arquivo carregado com sucesso: {file_path.name}")
     logger.info(f"📊 Linhas: {len(df)}, Colunas: {len(df.columns)}\n")
 
-    logger.info("Prévia dos dados (10 primeiras linhas):")
-    logger.info(f"{df.head(10)}\n")
-
-    logger.info("Prévia das últimas 10 linhas:")
-    logger.info(f"{df.tail(10)}\n")
 
     return df
 
