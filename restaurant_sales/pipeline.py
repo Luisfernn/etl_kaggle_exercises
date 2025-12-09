@@ -18,3 +18,7 @@ def pipeline(df: pd.DataFrame) -> pd.DataFrame:
         etapa = "Extração"
         logging.info("Iniciando extração de dados")
         df = extract(df)
+
+        etapa = "Pré-validção"
+        logging.info("Iniciando pré-validação...")
+        df = validation_pre_data(df, valid)
