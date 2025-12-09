@@ -15,3 +15,5 @@ def validation_post_data(df):
 
     logger.info("Pós_validation: Contagem de NaN por colunas:")
     logger.info(f"\n{nan_counts}")
+
+    return df
