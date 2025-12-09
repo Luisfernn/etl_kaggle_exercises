@@ -9,7 +9,7 @@ def validation_pre_data(df: pd.DataFrame) -> pd.DataFrame:
 
     required_columns = {"item", "quantity", "payment_method", "valid_line"}
     missing = required_columns - set(df.columns)
-    assert len(missing) == =, f"Missing required columns: {missing}"
+    assert len(missing) == 0, f"Missing required columns: {missing}"
 
 
     assert not df.empty, "DataFrame is empty after extract"
