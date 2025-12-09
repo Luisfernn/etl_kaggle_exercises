@@ -16,7 +16,7 @@ def validation_pre_data(df: pd.DataFrame) -> pd.DataFrame:
 
 
     if df.duplicated().any():
-    logging.warning("There's duplicate lines in df.")
+        logging.warning("There's duplicate lines in df.")
 
 
     valid = df["valid_line"] == True
