@@ -19,9 +19,8 @@ def validation_pre_data(df: pd.DataFrame) -> pd.DataFrame:
         logging.warning("There's duplicate lines in df.")
 
 
-    valid = df["valid_line"] == True
-
     df["valid_line"] = df["order_total"] > 0.01
+    valid = df["valid_line"] == True
 
 
     numeric_cols = ["price", "quantity"]
