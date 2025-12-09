@@ -11,7 +11,7 @@ import logging
 logger = logging.getLogger(__name__)
 logger.addHandler(logging.NullHandler())
 
-def pipeline(df: pd.DataFrame) -> pd.DataFrame:
+def run_pipeline(df: pd.DataFrame) -> pd.DataFrame:
 
     try:
         etapa = None
