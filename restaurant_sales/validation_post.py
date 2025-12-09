@@ -13,5 +13,5 @@ def validation_post_data(df):
 
     nan_counts = df.isna().sum
 
-    logging.info("Pós_validation: Contagem de NaN por colunas:")
-    logging.info(f"\n{nan_counts}")
+    logger.info("Pós_validation: Contagem de NaN por colunas:")
+    logger.info(f"\n{nan_counts}")
