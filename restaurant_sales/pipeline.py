@@ -26,3 +26,7 @@ def pipeline(df: pd.DataFrame) -> pd.DataFrame:
         etapa = "Transformações de texto"
         logging.info("Iniciando transformações de texto...")
         df = text_transformation(df, valid)
+
+        etapa = "Transformações numéricas"
+        logging.info("Iniciando transformações numéricas...")
+        df = numeric_transformation(df, valid)
