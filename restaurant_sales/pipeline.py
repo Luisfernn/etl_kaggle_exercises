@@ -24,7 +24,7 @@ def pipeline(df: pd.DataFrame) -> pd.DataFrame:
 
         etapa = "Pré-validção"
         logging.info("🔍 Iniciando pré-validação...")
-        df = validation_pre_data(df, valid)
+        df, valid = validation_pre_data(df)
 
         etapa = "Transformações de texto"
         logging.info("✏️ Iniciando transformações de texto...")
