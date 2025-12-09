@@ -1,6 +1,9 @@
 import pandas as pd
 import logging
 
+logger = logging.getLogger(__name__)
+logger.addHandler(logging.NullHandler())
+
 def numeric_transformation(df, valid):
     
     etapa = None
