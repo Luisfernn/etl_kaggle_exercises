@@ -16,7 +16,7 @@ def text_transformation(df, valid):
         etapa = "Preencher com unknown linhas válidas vázias da coluna payment_method"
         df.loc[valid, "payment_method"] = df.loc[valid, "payment_method"].fillna("unknown"), "❌ Erro ao preencher a coluna payment_method"
 
-     return df
+     return df, valid
 
     except Exception as e:
         logger.error(f"Erro na etapa: {etapa}")
