@@ -34,7 +34,7 @@ def validation_pre_data(df: pd.DataFrame) -> pd.DataFrame:
     invalid_dates = pd.to_datetime(df["date"], errors="coerce").isna().sum()    
 
 
-    nan_counts = df.isna().sum
+    nan_counts = df.isna().sum()
 
     logging.info("Pré_validation: Contagem de NaN por colunas:")
     logging.info(f"\n{nan_counts}")
