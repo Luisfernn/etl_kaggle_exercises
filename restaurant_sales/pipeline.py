@@ -34,3 +34,5 @@ def pipeline(df: pd.DataFrame) -> pd.DataFrame:
         etapa = "Pós-validação"
         logging.info("Iniciando pós-validação...")
         df = validation_post_data(df, valid)
+
+        return df
