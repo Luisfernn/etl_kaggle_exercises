@@ -40,6 +40,6 @@ def pipeline(df: pd.DataFrame) -> pd.DataFrame:
 
         return df
 
-   except Exception as e:
-       logging.error(f"❌ Erro na execução da etapa: {e}")
-       raise
+    except Exception as e:
+        logging.error(f"❌ Erro na execução da etapa: {e}")
+        raise
