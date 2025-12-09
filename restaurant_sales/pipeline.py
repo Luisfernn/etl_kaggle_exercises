@@ -16,30 +16,30 @@ def pipeline(df: pd.DataFrame) -> pd.DataFrame:
     try:
         etapa = None
 
-        logging.info("Iniciando pipeline...")
+        logger.info("Iniciando pipeline...")
 
         etapa = "Extração"
-        logging.info("📄 Iniciando extração de dados")
+        logger.info("📄 Iniciando extração de dados")
         df = extract_data(df)
 
         etapa = "Pré-validação"
-        logging.info("🔍 Iniciando pré-validação...")
+        logger.info("🔍 Iniciando pré-validação...")
         df, valid = validation_pre_data(df)
 
         etapa = "Transformações de texto"
-        logging.info("✏️ Iniciando transformações de texto...")
+        logger.info("✏️ Iniciando transformações de texto...")
         df = text_transformation(df, valid)
 
         etapa = "Transformações numéricas"
-        logging.info("🔢 Iniciando transformações numéricas...")
+        logger.info("🔢 Iniciando transformações numéricas...")
         df = numeric_transformation(df, valid)
 
         etapa = "Pós-validação"
-        logging.info("🔍✔️ Iniciando pós-validação...")
+        logger.info("🔍✔️ Iniciando pós-validação...")
         df = validation_post_data(df, valid)
 
         return df
 
     except Exception as e:
-        logging.error(f"❌ Erro na execução da etapa: {e}")
+        logger.error(f"❌ Erro na execução da etapa: {e}")
         raise
