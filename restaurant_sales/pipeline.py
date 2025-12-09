@@ -11,3 +11,5 @@ import logging
 def pipeline(df: pd.DataFrame) -> pd.DataFrame:
 
     logging.info("Iniciando extração dos dados...")
+
+    etapa = None
