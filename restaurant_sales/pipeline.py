@@ -9,3 +9,6 @@ import pandas as pd
 import logging
 
 def pipeline(df: pd.DataFrame) -> pd.DataFrame:
+
+    try:
+        
