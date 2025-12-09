@@ -5,7 +5,7 @@ import logging
 logger = logging.getLogger(__name__)
 logger.addHandler(logging.NullHandler())
 
-def load_data(df: pd.DataFrame, file_name: str = "restautant_sales_clean.csv", overwrite: bool = True):
+def load_data(df: pd.DataFrame, file_name: str = "restaurant_sales_clean.csv", overwrite: bool = True):
 
      output_dir = Path(__file__).resolve().parent / "data" / "output"
      output_dir.mkdir(parents=True, exist_ok=True)
