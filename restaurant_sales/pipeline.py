@@ -30,3 +30,7 @@ def pipeline(df: pd.DataFrame) -> pd.DataFrame:
         etapa = "Transformações numéricas"
         logging.info("Iniciando transformações numéricas...")
         df = numeric_transformation(df, valid)
+
+        etapa = "Pós-validação"
+        logging.info("Iniciando pós-validação...")
+        df = validation_post_data(df, valid)
