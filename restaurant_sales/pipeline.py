@@ -12,3 +12,5 @@ def pipeline(df: pd.DataFrame) -> pd.DataFrame:
 
     try:
         etapa = None
+
+        logging.info("Iniciando pipeline...")
