@@ -56,4 +56,4 @@ if __name__ == "__main__":
     logger.addHandler(handler)
     logger.setLevel(logging.INFO)
     
-    extract_data()
+    df = extract_data()
