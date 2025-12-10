@@ -1,5 +1,5 @@
 import logging
-import pandas
+import pandas as pd
 from pathlib import Path
 from pipeline import run_pipeline
 from load import load_data
