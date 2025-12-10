@@ -5,6 +5,7 @@ from pipeline import run_pipeline
 from load import load_data
 
 BASE_DIR = Path(__file__).resolve().parent
+INPUT_FILE = BASE_DIR / "data" / "input" / "restaurant_sales.csv"
 OUTPUT_DIR = BASE_DIR / "data" / "output"
 LOG_DIR = BASE_DIR / "data" / "logs"
 
