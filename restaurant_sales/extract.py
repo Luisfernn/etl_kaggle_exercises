@@ -32,7 +32,12 @@ def extract_data(file_path: Path = None):
 
     col_not_transform = ["order_id","customer_id"]
     
-    
+    df.columns = (
+    df.columns
+    .str.lower()
+    .str.strip()
+    .str.replace(" ", "_")
+)
 
             
     logger.info(f"\n✅ Arquivo carregado com sucesso: {file_path.name}")
