@@ -27,7 +27,6 @@ if __name__ == "__main__":
     try:
         logger.info("🚀 Iniciando execução da pipeline...")
 
-        df_raw = pd.read_csv(INPUT_FILE)
         df = run_pipeline(df_raw)
 
         if df is not None:
