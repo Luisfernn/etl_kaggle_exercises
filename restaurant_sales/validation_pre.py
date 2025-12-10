@@ -39,7 +39,8 @@ def validation_pre_data(df: pd.DataFrame) -> pd.DataFrame:
         logger.warning(f"❗ Valores inválidos em '{col}': {invalid}")
 
 
-    invalid_dates = pd.to_datetime(df["date"], errors="coerce").isna().sum()    
+    invalid_dates = pd.to_datetime(df["date"], errors="coerce").isna().sum() 
+    logger.warning(f"❗ Datas inválidas: {invalid_dates}")   
 
 
     nan_counts = df.isna().sum()
