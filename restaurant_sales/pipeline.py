@@ -20,7 +20,7 @@ def run_pipeline(input_file: str) -> pd.DataFrame:
 
         etapa = "Extração"
         logger.info("📄 Iniciando extração de dados")
-        df = extract_data(df)
+        df = extract_data(input_file)
 
         etapa = "Pré-validação"
         logger.info("🔍 Iniciando pré-validação...")
