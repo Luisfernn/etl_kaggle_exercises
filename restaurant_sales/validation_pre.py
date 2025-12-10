@@ -8,7 +8,7 @@ logger.addHandler(logging.NullHandler())
 def validation_pre_data(df: pd.DataFrame) -> pd.DataFrame:
 
     required_columns = {
-        "oder_id",
+        "order_id",
         "customer_id",
         "item",
         "quantity",
