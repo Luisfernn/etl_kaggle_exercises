@@ -16,7 +16,7 @@ def run_pipeline(input_file: str) -> pd.DataFrame:
     try:
         etapa = None
 
-        logger.info("Iniciando pipeline...")
+        logger.info("🚀 Iniciando pipeline...")
 
         etapa = "Extração"
         logger.info("📄 Iniciando extração de dados")
