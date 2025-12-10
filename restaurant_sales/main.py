@@ -27,7 +27,7 @@ if __name__ == "__main__":
     try:
         logger.info("🚀 Iniciando execução da pipeline...")
 
-        df = run_pipeline(df_raw)
+        df = run_pipeline(INPUT_FILE)
 
         if df is not None:
             logger.info("💾 Carregando dados no diretório de saída...")
