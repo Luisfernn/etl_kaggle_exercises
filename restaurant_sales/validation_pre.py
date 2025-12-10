@@ -14,7 +14,7 @@ def validation_pre_data(df: pd.DataFrame) -> pd.DataFrame:
         "quantity",
         "price",
         "payment_method",
-        "date",
+        "order_date",
         "order_total"
     }
     missing = required_columns - set(df.columns)
