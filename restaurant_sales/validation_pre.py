@@ -32,7 +32,7 @@ def validation_pre_data(df: pd.DataFrame) -> pd.DataFrame:
     valid = df["valid_line"] == True
 
 
-    numeric_cols = ["price", "quantity"]
+    numeric_cols = ["price", "quantity", "order_total"]
 
     for col in numeric_cols:
         invalid = pd.to_numeric(df[col], errors="coerce").isna().sum()
