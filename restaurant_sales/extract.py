@@ -32,14 +32,7 @@ def extract_data(file_path: Path = None):
 
     col_not_transform = ["order_id","customer_id"]
     
-
-    for col in df.columns:
-        if pd.api.types.is_numeric_dtype(df[col]):
-            continue
-        if col in col_not_transform:
-            continue    
-        else:
-            df.columns = df.columns.str.lower().str.replace(" ", "_")
+    
 
             
     logger.info(f"\n✅ Arquivo carregado com sucesso: {file_path.name}")
