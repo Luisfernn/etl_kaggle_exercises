@@ -11,7 +11,7 @@ def validation_pre_data(df: pd.DataFrame) -> pd.DataFrame:
         "item",
         "quantity",
         "payment_method",
-        "valid_line"}
+        ""}
     missing = required_columns - set(df.columns)
     assert len(missing) == 0, f"Missing required columns: {missing}"
 
