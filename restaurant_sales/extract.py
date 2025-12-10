@@ -39,7 +39,7 @@ def extract_data(file_path: Path = None):
         if col in col_not_transform:
             continue    
         else:
-            df[col] = df[col].str.lower().str.replace(" ", "_")
+            df.columns = df.columns.str.lower().str.replace(" ", "_")
 
             
     logger.info(f"\n✅ Arquivo carregado com sucesso: {file_path.name}")
