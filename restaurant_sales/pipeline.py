@@ -28,15 +28,15 @@ def run_pipeline(input_file: str) -> pd.DataFrame:
 
         etapa = "Transformações de texto"
         logger.info("✏️ Iniciando transformações de texto...")
-        df = text_transformation(df, valid)
+        df, valid = text_transformation(df, valid)
 
         etapa = "Transformações numéricas"
         logger.info("🔢 Iniciando transformações numéricas...")
-        df = numeric_transformation(df, valid)
+        df, numeric = numeric_transformation(df, valid)
 
         etapa = "Pós-validação"
         logger.info("🔍✔️ Iniciando pós-validação...")
-        df = validation_post_data(df, valid)
+        df, valid = validation_post_data(df, valid)
 
         return df
 
