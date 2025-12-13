@@ -36,7 +36,7 @@ def run_pipeline(input_file: str) -> pd.DataFrame:
 
         etapa = "Pós-validação"
         logger.info("🔍✔️ Iniciando pós-validação...")
-        df = validation_post_data(df, valid)
+        df = validation_post_data(df)
 
         return df
 
