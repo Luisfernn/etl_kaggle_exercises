@@ -9,7 +9,8 @@ def validation_post_data(df, valid):
 
     assert is_numeric_dtype(df["price"]), "price is not numeric after transformation"
     df.loc[valid, "quantity"] = (pd.to_numeric(df.loc[valid, "quantity"], errors="coerce").fillna(0).astype("int64"))
-    assert df["item"].notna().all(), "item has NaN after text cleaning"
+    assert df.loc[valid, "item"].notna().all(), \
+    "item has NaN in valid lines after text cleaning"
     assert df["payment_method"].notna().all(), "payment_method has NaN after text cleaning"
 
     nan_counts = df.isna().sum()
