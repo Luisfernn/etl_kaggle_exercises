@@ -7,7 +7,8 @@ logger.addHandler(logging.NullHandler())
 def validation_post_data(df):
 
     assert is_numeric_dtype(df["price"]), "price is not numeric after transformation"
-    assert is_integer_dtype(df["quantity"]), "quantity not converted to integer"
+    assert is_integer_dtype(df["quantity"]), \
+    "quantity not converted to integer"
     assert df["item"].notna().all(), "item has NaN after text cleaning"
     assert df["payment_method"].notna().all(), "payment_method has NaN after text cleaning"
 
