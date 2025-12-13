@@ -1,5 +1,5 @@
-import pandas as pd
 import logging
+from pandas.api.types import is_numeric_dtype, is_integer_dtype
 
 logger = logging.getLogger(__name__)
 logger.addHandler(logging.NullHandler())
