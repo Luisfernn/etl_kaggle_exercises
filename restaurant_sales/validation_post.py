@@ -1,3 +1,4 @@
+import pandas as pd
 import logging
 from pandas.api.types import is_integer_dtype, is_numeric_dtype
 
