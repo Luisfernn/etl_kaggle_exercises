@@ -14,7 +14,7 @@ def numeric_transformation(df, valid):
 
         etapa = "Preenchendo com 0 linhas validas vazias em price e transformando os dados da coluna em int"
         df.loc[valid, "quantity"] = (
-        pd.to_numeric(df.loc[valid, "quantity"], errors="coerce").fillna(0).astype("int64"))
+        pd.to_numeric(df.loc[valid, "quantity"], errors="coerce").fillna(0)
 
         return df
 
