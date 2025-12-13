@@ -32,7 +32,7 @@ def run_pipeline(input_file: str) -> pd.DataFrame:
 
         etapa = "Transformações numéricas"
         logger.info("🔢 Iniciando transformações numéricas...")
-        df, numeric = numeric_transformation(df, valid)
+        df = numeric_transformation(df, valid)
 
         etapa = "Pós-validação"
         logger.info("🔍✔️ Iniciando pós-validação...")
