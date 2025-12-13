@@ -5,7 +5,7 @@ from pandas.api.types import is_integer_dtype, is_numeric_dtype
 logger = logging.getLogger(__name__)
 logger.addHandler(logging.NullHandler())
 
-def validation_post_data(df):
+def validation_post_data(df, valid):
 
     assert is_numeric_dtype(df["price"]), "price is not numeric after transformation"
     logger.info(df["quantity"].dtype)
