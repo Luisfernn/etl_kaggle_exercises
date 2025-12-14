@@ -13,7 +13,7 @@ def validation_post_data(df, valid):
     assert (
     df.loc[valid, "quantity"].dropna() % 1 == 0).all(), "quantity has non-integer values"
 
-    assert is_numeric_dtype(df.loc[valid, "order_total"]), \
+    assert is_numeric_dtype(df["order_total"]), \
         "order_total is not numeric after transformation"
 
     assert df.loc[valid, "item"].notna().all(), \
