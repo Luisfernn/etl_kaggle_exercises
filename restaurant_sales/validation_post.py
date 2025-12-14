@@ -16,7 +16,6 @@ def validation_post_data(df, valid):
     assert is_numeric_dtype(df.loc[valid, "order_total"]), \
         "order_total is not numeric after transformation"
 
-    
     assert df.loc[valid, "item"].notna().all(), \
         "item has NaN in valid lines after text cleaning"
 
