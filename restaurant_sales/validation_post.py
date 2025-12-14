@@ -7,7 +7,7 @@ logger.addHandler(logging.NullHandler())
 
 def validation_post_data(df, valid):
 
-    assert is_numeric_dtype(df.loc[valid, "price"]), \
+    assert is_numeric_dtype(df["price"]), \
         "price is not numeric after transformation"
 
     assert is_integer_dtype(df.loc[valid, "quantity"]), \
