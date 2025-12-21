@@ -11,7 +11,7 @@ def extract_data(file_path: Path = None):
 
     if file_path is None:
         base_dir = Path(__file__).resolve().parent
-        file_path = base_dir / "data" / "input" / "iranian_transaction_dirty"
+        file_path = base_dir / "data" / "input" / "iranian_transaction_dirty.csv"
 
     if not file_path.exists():
         logger.error(f"❌ Arquivo {iranian_transaction_dirty} não encontrado.")
