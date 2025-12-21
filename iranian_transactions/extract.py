@@ -14,7 +14,7 @@ def extract_data(file_path: Path = None):
         file_path = base_dir / "data" / "input" / "iranian_transaction_dirty.csv"
 
     if not file_path.exists():
-        logger.error(f"❌ Arquivo {iranian_transaction_dirty} não encontrado.")
+        logger.error(f"❌ Arquivo {file_path} não encontrado.")
         return None
 
     try:
@@ -33,8 +33,10 @@ if __name__ == "__main__":
 
     df = extract_data()
 
-    logger.info("Prévia dos dados (10 primeiras linhas):")
-    logger.info(f"{df.head(10)}\n")
+    if df is not None:
+        
+        logger.info("Prévia dos dados (10 primeiras linhas):")
+        logger.info(f"{df.head(10)}\n")
 
-    logger.info("Prévia das últimas 10 linhas:")
-    logger.info(f"{df.tail(10)}\n")            
+        logger.info("Prévia das últimas 10 linhas:")
+        logger.info(f"{df.tail(10)}\n")            
