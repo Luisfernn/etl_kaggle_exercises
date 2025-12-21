@@ -31,4 +31,10 @@ if __name__ == "__main__":
     logger.addHandler(handler)
     logger.setLevel(logging.INFO)
 
-    df = extract_data()            
+    df = extract_data()
+
+    logger.info("Prévia dos dados (10 primeiras linhas):")
+    logger.info(f"{df.head(10)}\n")
+
+    logger.info("Prévia das últimas 10 linhas:")
+    logger.info(f"{df.tail(10)}\n")            
